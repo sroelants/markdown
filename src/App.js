@@ -29,7 +29,7 @@ class Input extends Component {
   render() {
     return (
       <div>
-        <InputHeader />
+        <InputHeader className="header" />
         <InputField onKeyUp={e => this.props.onKeyUp(e)} />
       </div>
     );
@@ -56,7 +56,7 @@ class Output extends Component {
   render() {
     return (
       <div>
-        <OutputHeader />
+        <OutputHeader className="header" />
         <OutputField content={this.props.content} />
       </div>
     );
