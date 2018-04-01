@@ -24,6 +24,7 @@ class InputField extends Component {
     );
   }
 }
+
 class Input extends Component {
   render() {
     return (
@@ -34,6 +35,7 @@ class Input extends Component {
     );
   }
 }
+
 class OutputHeader extends Component {
   render() {
     return <h1>Output header!</h1>;
