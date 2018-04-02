@@ -10,7 +10,7 @@ class InputHeader extends Component {
 
 class InputField extends Component {
   handleKeyUp(event) {
-    this.props.onKeyUp(event.currentTarget.value);
+    this.props.handler(event.currentTarget.value);
   }
 
   render() {
@@ -18,7 +18,7 @@ class InputField extends Component {
       <textarea
         type="text"
         className="if"
-        placeholde="Input"
+        placeholder="Input"
         onKeyUp={e => this.handleKeyUp(e)}
       />
     );
@@ -29,8 +29,11 @@ class Input extends Component {
   render() {
     return (
       <div>
-        <InputHeader className="header" />
-        <InputField onKeyUp={e => this.props.onKeyUp(e)} />
+        <InputHeader className="box box__header" />
+        <InputField
+          className="box box__field"
+          handler={e => this.props.handler(e)}
+        />
       </div>
     );
   }
@@ -56,8 +59,8 @@ class Output extends Component {
   render() {
     return (
       <div>
-        <OutputHeader className="header" />
-        <OutputField content={this.props.content} />
+        <OutputHeader className="box box_header" />
+        <OutputField className="box box__field" content={this.props.content} />
       </div>
     );
   }
@@ -81,8 +84,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Input onKeyUp={e => this.inputHandler(e)} />
-        <Output content={this.state.output} />
+        <Input handler={e => this.inputHandler(e)} className="Input" />
+        <Output content={this.state.output} className="Output" />
       </div>
     );
   }
