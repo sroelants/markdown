@@ -6,13 +6,26 @@ $color4: hsla(220%, 4%, 74%, 1);
 $color5: hsla(0%, 0%, 93%, 1);
 
 /* RGB */
-$color1: rgba(77, 90, 102, 1);
-$color2: rgba(94, 112, 119, 1);
-$color3: rgba(127, 155, 163, 1);
-$color4: rgba(185, 187, 191, 1);
-$color5: rgba(237, 237, 237, 1);
+$color1: rgba(77, 90, 102, 1);    // Text
+$color2: rgba(94, 112, 119, 1);   // Box Header
+$color3: rgba(127, 155, 163, 1);  // Box Header text
+$color4: rgba(185, 187, 191, 1);  // Box field
+$color5: rgba(237, 237, 237, 1);  // BG
 
 body
   background-color: $color5
+  width: 100%
+
+.box
+  width: 40% 
+  border: solid 1px red
+  margin: auto
+  // display: inline
+
+.box .box__header
+  background-color: $color2
+  color: $color3
+  
+
 
 
