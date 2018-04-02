@@ -2,9 +2,19 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+//*****************************************************************************
+//
+// Input box
+//
+// ****************************************************************************
+
 class InputHeader extends Component {
   render() {
-    return <h1>Input header!</h1>;
+    return (
+      <div className="box__header">
+        <p>Input header!</p>
+      </div>
+    );
   }
 }
 
@@ -15,12 +25,13 @@ class InputField extends Component {
 
   render() {
     return (
-      <textarea
-        type="text"
-        className="if"
-        placeholder="Input"
-        onKeyUp={e => this.handleKeyUp(e)}
-      />
+      <div className="box__field">
+        <textarea
+          type="text"
+          placeholder="Input"
+          onKeyUp={e => this.handleKeyUp(e)}
+        />
+      </div>
     );
   }
 }
@@ -28,20 +39,27 @@ class InputField extends Component {
 class Input extends Component {
   render() {
     return (
-      <div>
-        <InputHeader className="box box__header" />
-        <InputField
-          className="box box__field"
-          handler={e => this.props.handler(e)}
-        />
+      <div className="box">
+        <InputHeader />
+        <InputField handler={e => this.props.handler(e)} />
       </div>
     );
   }
 }
 
+//*****************************************************************************
+//
+// Output box
+//
+//*****************************************************************************
+
 class OutputHeader extends Component {
   render() {
-    return <h1>Output header!</h1>;
+    return (
+      <div className="box__header">
+        <p>Output header!</p>
+      </div>
+    );
   }
 }
 
@@ -51,20 +69,30 @@ class OutputField extends Component {
     this.state = { content: "Output stub" };
   }
   render() {
-    return <pre>{this.props.content}</pre>;
+    return (
+      <div className="box__field">
+        <pre>{this.props.content}</pre>
+      </div>
+    );
   }
 }
 
 class Output extends Component {
   render() {
     return (
-      <div>
+      <div className="box">
         <OutputHeader className="box box_header" />
         <OutputField className="box box__field" content={this.props.content} />
       </div>
     );
   }
 }
+
+//*****************************************************************************
+//
+// App
+//
+// ****************************************************************************
 
 class App extends Component {
   constructor(props) {
@@ -84,8 +112,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Input handler={e => this.inputHandler(e)} className="Input" />
-        <Output content={this.state.output} className="Output" />
+        <Input handler={e => this.inputHandler(e)} />
+        <Output content={this.state.output} />
       </div>
     );
   }
