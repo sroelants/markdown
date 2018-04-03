@@ -1,4 +1,68 @@
 /* HSL */
 /* RGB */
+/* Rubik font */
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
-  background-color: #ededed; }
+  background-color: #ededed;
+  min-width: 100%;
+  min-height: 100%; }
+
+main {
+  display: flex;
+  justify-content: center; }
+
+textarea {
+  resize: none;
+  outline: none; }
+
+pre {
+  margin: 16px 0 0 0;
+  font-size: 16px; }
+
+.box {
+  width: 40%;
+  margin: 2%;
+  min-height: 60vh;
+  box-sizing: border-box; }
+
+.box__header {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  text-align: left;
+  height: 5vh;
+  background-color: #5e7077;
+  color: #7f9ba3;
+  display: flex;
+  justify-content: space-between; }
+
+.box__label {
+  line-height: 5vh;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.box__field {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #b9bbbf;
+  color: #4d5a66;
+  min-height: 55vh;
+  min-width: 100%;
+  text-align: left; }
+
+.switches {
+  display: flex;
+  justify-content: end; }
+
+.switches__switch {
+  margin: 0 15px 0 0;
+  line-height: 5vh; }
+
+.switches__switch--inactive {
+  color: #4d5965; }
+
+.switches__switch--inactive:hover {
+  color: #7d8d9c;
+  cursor: pointer;
+  transition: color 0.2s; }

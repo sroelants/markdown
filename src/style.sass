@@ -12,20 +12,79 @@ $color3: rgba(127, 155, 163, 1);  // Box Header text
 $color4: rgba(185, 187, 191, 1);  // Box field
 $color5: rgba(237, 237, 237, 1);  // BG
 
+/* Rubik font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
+
+
+
 body
   background-color: $color5
-  width: 100%
+  min-width: 100%
+  min-height: 100%
+
+main
+  display: flex
+  justify-content: center
+
+textarea
+  resize: none
+  outline: none
+
+pre
+  margin: 16px 0 0 0 
+  font-size: 16px
+
+
+
+
 
 .box
   width: 40% 
-  border: solid 1px red
-  margin: auto
-  // display: inline
+  margin: 2%
+  min-height: 60vh
+  box-sizing: border-box
 
-.box .box__header
+.box__header
+  font-family: 'Quicksand', sans-serif
+  font-size: 25px
+  text-align: left
+  height: 5vh
   background-color: $color2
   color: $color3
-  
+  display: flex
+  justify-content: space-between
 
+.box__label
+    line-height: 5vh
+    margin-left: 10px
+    margin-right: auto
+    margin-top: 0
+    margin-bottom: 0
 
+.box__field
+  box-sizing: border-box
+  padding: 10px
+  background-color: $color4
+  color: $color1
+  min-height: 55vh 
+  min-width: 100%
+  text-align: left
+
+.switches
+  display: flex
+  justify-content: end
+
+.switches__switch
+  margin: 0 15px 0 0 
+  line-height: 5vh
+
+.switches__switch--inactive
+  color: darken($color1, 0.2) 
+
+.switches__switch--inactive:hover
+  color: lighten($color1, 20%)
+  cursor: pointer
+  transition: color 0.2s
 
