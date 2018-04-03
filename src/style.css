@@ -3,7 +3,7 @@
 /* Rubik font */
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
-  background-color: #ededed;
+  background-color: gainsboro;
   min-width: 100%;
   min-height: 100%; }
 
@@ -13,7 +13,8 @@ main {
 
 textarea {
   resize: none;
-  outline: none; }
+  outline: none;
+  border: none; }
 
 pre {
   margin: 16px 0 0 0;
@@ -21,17 +22,19 @@ pre {
 
 .box {
   width: 40%;
+  background-color: #fcf9f2;
   margin: 2%;
   min-height: 60vh;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border: solid 1px #f2e6c9; }
 
 .box__header {
   font-family: 'Quicksand', sans-serif;
   font-size: 25px;
   text-align: left;
   height: 5vh;
-  background-color: #5e7077;
-  color: #7f9ba3;
+  background-color: #d81e5b;
+  color: #331832;
   display: flex;
   justify-content: space-between; }
 
@@ -45,8 +48,8 @@ pre {
 .box__field {
   box-sizing: border-box;
   padding: 10px;
-  background-color: #b9bbbf;
-  color: #4d5a66;
+  background-color: #fcf9f2;
+  color: #331832;
   min-height: 55vh;
   min-width: 100%;
   text-align: left; }
@@ -60,9 +63,9 @@ pre {
   line-height: 5vh; }
 
 .switches__switch--inactive {
-  color: #4d5965; }
+  color: #f0544f; }
 
 .switches__switch--inactive:hover {
-  color: #7d8d9c;
+  color: #562854;
   cursor: pointer;
   transition: color 0.2s; }

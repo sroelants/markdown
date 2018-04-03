@@ -1,16 +1,18 @@
 /* HSL */
-$color1: hsla(209%, 14%, 35%, 1);
-$color2: hsla(197%, 12%, 42%, 1);
-$color3: hsla(193%, 16%, 57%, 1);
-$color4: hsla(220%, 4%, 74%, 1);
-$color5: hsla(0%, 0%, 93%, 1);
+$color1: hsla(302%, 36%, 15%, 1);
+$color2: hsla(340%, 76%, 48%, 1);
+$color3: hsla(2%, 84%, 63%, 1);
+$color4: hsla(163%, 19%, 81%, 1);
+$color5: hsla(41%, 91%, 91%, 1);
 
 /* RGB */
-$color1: rgba(77, 90, 102, 1);    // Text
-$color2: rgba(94, 112, 119, 1);   // Box Header
-$color3: rgba(127, 155, 163, 1);  // Box Header text
-$color4: rgba(185, 187, 191, 1);  // Box field
-$color5: rgba(237, 237, 237, 1);  // BG
+$color1: rgba(51, 24, 50, 1);
+$color2: rgba(216, 30, 91, 1);
+$color3: rgba(240, 84, 79, 1);
+$color4: rgba(198, 216, 211, 1);
+// $color5: rgba(253, 240, 213, 1);
+$color5: rgba(252, 249, 242, 1);
+$color6: rgba(220, 220, 220, 1)
 
 /* Rubik font */
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
@@ -20,7 +22,7 @@ $color5: rgba(237, 237, 237, 1);  // BG
 
 
 body
-  background-color: $color5
+  background-color: $color6
   min-width: 100%
   min-height: 100%
 
@@ -31,6 +33,7 @@ main
 textarea
   resize: none
   outline: none
+  border: none
 
 pre
   margin: 16px 0 0 0 
@@ -42,9 +45,12 @@ pre
 
 .box
   width: 40% 
+  background-color: $color5
   margin: 2%
   min-height: 60vh
   box-sizing: border-box
+  border: solid 1px darken($color5, 10%)
+
 
 .box__header
   font-family: 'Quicksand', sans-serif
@@ -52,7 +58,7 @@ pre
   text-align: left
   height: 5vh
   background-color: $color2
-  color: $color3
+  color: $color1
   display: flex
   justify-content: space-between
 
@@ -66,7 +72,7 @@ pre
 .box__field
   box-sizing: border-box
   padding: 10px
-  background-color: $color4
+  background-color: $color5
   color: $color1
   min-height: 55vh 
   min-width: 100%
@@ -81,10 +87,10 @@ pre
   line-height: 5vh
 
 .switches__switch--inactive
-  color: darken($color1, 0.2) 
+  color: $color3
 
 .switches__switch--inactive:hover
-  color: lighten($color1, 20%)
+  color: lighten($color1, 10%)
   cursor: pointer
   transition: color 0.2s
 
