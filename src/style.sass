@@ -1,3 +1,17 @@
+/******************************************************************************
+  Table of contents
+  
+  1.  General definitions and imports (colors, fonts)
+  2.  General tag styling (body, main, textarea,...)
+  3.  Footer styling
+  4.  Header styling
+  5.  Box styling 
+  ****************************************************************************/
+
+
+
+
+
 /* HSL */
 $color1: hsla(302%, 36%, 15%, 1);
 $color2: hsla(340%, 76%, 48%, 1);
@@ -11,15 +25,15 @@ $color2: rgba(216, 30, 91, 1);
 $color3: rgba(240, 84, 79, 1);
 $color4: rgba(198, 216, 211, 1);
 // $color5: rgba(253, 240, 213, 1);
-$color5: rgba(252, 249, 242, 1);
+// $color5: rgba(252, 249, 242, 1);
+$color5: rgba(232, 232, 232, 1);
 $color6: rgba(220, 220, 220, 1)
 
 /* Rubik font */
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico');
 
-
-
-
+*
+  box-sizing: border-box
 
 body
   background-color: $color6
@@ -29,6 +43,7 @@ body
 main
   display: flex
   justify-content: center
+  min-height: 55vh
 
 textarea
   resize: none
@@ -39,44 +54,123 @@ pre
   margin: 16px 0 0 0 
   font-size: 16px
 
+a 
+  color: inherit
+  text-decoration: none
+
+a:hover
+  color: $color3
+
+
+/* Color for the footer? */
+footer
+  background-color: $color2
+  display: flex
+  justify-content: space-between
+  padding-left: 20px
+  padding-top: 10px
+  padding-bottom: 10px
+  padding-right: 20px
+  width: 100%
+  min-height: 5vh 
+  text-align: center
+
+.footer__github
+  margin-top: 5px
+  text-align: center
+  margin: auto
+
+.brand
+  height: 25px
+  stroke-width: 2px
+  text-align: right
+
+
+
+
+
+header
+  min-height: 40vh
+  background-color: $color3
+  background: linear-gradient(175deg, $color3 0%, $color3 55%, $color2 100%)
+  outline-bottom: solid 1px darken($color3, 5%)
+  display: grid
+
+.banner
+  min-width: 40vw
+  // min-height: 50%
+  margin: auto
+  display: grid
+  grid-template-rows: auto auto auto
+  grid-template-columns: auto auto
+  grid-template-areas: "logo marker" "logo marker" "logo subtext"
+  color: darken($color3, 55%)
+  user-select: none
+
+
+// |---------------------------------|
+// |logo           | marker          |
+// |---------------------------------|
+// |logo           | marker          |
+// |---------------------------------|
+// |logo           | subtext         |
+// |---------------------------------|
+
+.banner__logo
+  padding-right: 20px
+  grid-area: logo
+  height: 80%
+  margin: auto
+
+.banner__marker
+  grid-area: marker
+  font-family: 'Pacifico', sans-serif
+  font-size: 120pt
+
+.banner__subtext
+  grid-area: subtext
+  font-family: 'Open Sans Condensed', sans-serif
+  font-size: 16pt
+  text-align: right
+  margin-top: -3em
+
 
 
 
 
 .box
   width: 40% 
-  background-color: $color5
   margin: 2%
-  min-height: 60vh
-  box-sizing: border-box
-  border: solid 1px darken($color5, 10%)
+  // box-sizing: border-box
 
 
 .box__header
-  font-family: 'Quicksand', sans-serif
-  font-size: 25px
+  font-family: 'Palatino', serif
+  font-size: 15px
   text-align: left
   height: 5vh
-  background-color: $color2
-  color: $color1
+  color: darken($color6, 40%)
   display: flex
   justify-content: space-between
 
 .box__label
     line-height: 5vh
-    margin-left: 10px
+    margin-left: 15px
     margin-right: auto
     margin-top: 0
     margin-bottom: 0
 
 .box__field
-  box-sizing: border-box
+  // box-sizing: border-box
   padding: 10px
   background-color: $color5
   color: $color1
-  min-height: 55vh 
-  min-width: 100%
+  height: 40vh 
+  width: 100%
   text-align: left
+  border: solid 1px darken($color5, 10%)
+  border-radius: 4px
+  overflow: auto
 
 .switches
   display: flex
@@ -86,7 +180,7 @@ pre
   margin: 0 15px 0 0 
   line-height: 5vh
 
-.switches__switch--inactive
+.switches__switch--active
   color: $color3
 
 .switches__switch--inactive:hover
@@ -94,3 +188,35 @@ pre
   cursor: pointer
   transition: color 0.2s
 
+
+
+
+// |---------------------------------|
+// |logo           | logo            |
+// |---------------------------------|
+// |marker         | marker          |
+// |---------------------------------|
+// |subtext        | subtext         |
+// |---------------------------------|
+
+@media (max-width: 900px)
+  main
+    flex-direction: column
+    padding: 20px
+  .box
+    width: 80%
+    margin: auto
+  .banner
+    grid-template-areas: "logo logo" "marker marker" "subtext subtext";
+  .banner__logo
+    height: 20vh
+  .banner__marker
+    height: 1em
+    line-height: 0.7
+  .banner__subtext
+    margin-top: -1em
+
+@media (max-width: 700px)
+  .banner__marker
+    font-size: 80px
+    margin-top: 0.3em

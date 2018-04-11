@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
+import brand from "./brand.svg";
 import "./App.css";
+import "font-awesome/css/font-awesome.min.css";
 var myMarked = require("marked");
 
 //*****************************************************************************
@@ -151,13 +153,20 @@ class App extends Component {
     this.setState({ format: f === "markdown" ? "markdown" : "html" });
   }
 
-  // <header className="App-header">
-  //   <img src={logo} className="App-logo" alt="logo" />
-  //   <h1 className="App-title">Welcome to React</h1>
-  // </header>
   render() {
     return (
       <div className="App">
+        <header>
+          <div className="banner">
+            <img
+              className="banner__logo"
+              src={logo}
+              alt="Marker markup generator"
+            />
+            <div className="banner__marker">Marker</div>
+            <div className="banner__subtext">Markup generator</div>
+          </div>
+        </header>
         <main>
           <Input handler={e => this.inputHandler(e)} />
           <Output
@@ -165,6 +174,19 @@ class App extends Component {
             switchHandler={f => this.outputSwitchHandler(f)}
           />
         </main>
+        <footer>
+          <a
+            className="footer__github"
+            href="http://www.github.com/sroelants/markdown_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hosted with{" "}
+            <i className="fa fa-heart" style={{ color: "#931d2f" }} /> on Github{" "}
+            <i className="fa fa-github" />
+          </a>
+          <img className="brand" src={brand} alt="Sam" />
+        </footer>
       </div>
     );
   }

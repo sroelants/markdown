@@ -1,7 +1,19 @@
+/******************************************************************************
+  Table of contents
+
+  1.  General definitions and imports (colors, fonts)
+  2.  General tag styling (body, main, textarea,...)
+  3.  Footer styling
+  4.  Header styling
+  5.  Box styling
+  ****************************************************************************/
 /* HSL */
 /* RGB */
 /* Rubik font */
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico");
+* {
+  box-sizing: border-box; }
+
 body {
   background-color: gainsboro;
   min-width: 100%;
@@ -9,7 +21,8 @@ body {
 
 main {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  min-height: 55vh; }
 
 textarea {
   resize: none;
@@ -20,39 +33,101 @@ pre {
   margin: 16px 0 0 0;
   font-size: 16px; }
 
+a {
+  color: inherit;
+  text-decoration: none; }
+
+a:hover {
+  color: #f0544f; }
+
+/* Color for the footer? */
+footer {
+  background-color: #d81e5b;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  width: 100%;
+  min-height: 5vh;
+  text-align: center; }
+
+.footer__github {
+  margin-top: 5px;
+  text-align: center;
+  margin: auto; }
+
+.brand {
+  height: 25px;
+  stroke-width: 2px;
+  text-align: right; }
+
+header {
+  min-height: 40vh;
+  background-color: #f0544f;
+  background: linear-gradient(175deg, #f0544f 0%, #f0544f 55%, #d81e5b 100%);
+  outline-bottom: solid 1px #ee3d38;
+  display: grid; }
+
+.banner {
+  min-width: 40vw;
+  margin: auto;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: "logo marker" "logo marker" "logo subtext";
+  color: #230403;
+  user-select: none; }
+
+.banner__logo {
+  padding-right: 20px;
+  grid-area: logo;
+  height: 80%;
+  margin: auto; }
+
+.banner__marker {
+  grid-area: marker;
+  font-family: 'Pacifico', sans-serif;
+  font-size: 120pt; }
+
+.banner__subtext {
+  grid-area: subtext;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16pt;
+  text-align: right;
+  margin-top: -3em; }
+
 .box {
   width: 40%;
-  background-color: #fcf9f2;
-  margin: 2%;
-  min-height: 60vh;
-  box-sizing: border-box;
-  border: solid 1px #f2e6c9; }
+  margin: 2%; }
 
 .box__header {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 25px;
+  font-family: 'Palatino', serif;
+  font-size: 15px;
   text-align: left;
   height: 5vh;
-  background-color: #d81e5b;
-  color: #331832;
+  color: #767676;
   display: flex;
   justify-content: space-between; }
 
 .box__label {
   line-height: 5vh;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0; }
 
 .box__field {
-  box-sizing: border-box;
   padding: 10px;
-  background-color: #fcf9f2;
+  background-color: #e8e8e8;
   color: #331832;
-  min-height: 55vh;
-  min-width: 100%;
-  text-align: left; }
+  height: 40vh;
+  width: 100%;
+  text-align: left;
+  border: solid 1px #cfcfcf;
+  border-radius: 4px;
+  overflow: auto; }
 
 .switches {
   display: flex;
@@ -62,10 +137,32 @@ pre {
   margin: 0 15px 0 0;
   line-height: 5vh; }
 
-.switches__switch--inactive {
+.switches__switch--active {
   color: #f0544f; }
 
 .switches__switch--inactive:hover {
   color: #562854;
   cursor: pointer;
   transition: color 0.2s; }
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    padding: 20px; }
+  .box {
+    width: 80%;
+    margin: auto; }
+  .banner {
+    grid-template-areas: "logo logo" "marker marker" "subtext subtext"; }
+  .banner__logo {
+    height: 20vh; }
+  .banner__marker {
+    height: 1em;
+    line-height: 0.7; }
+  .banner__subtext {
+    margin-top: -1em; } }
+
+@media (max-width: 700px) {
+  .banner__marker {
+    font-size: 80px;
+    margin-top: 0.3em; } }
